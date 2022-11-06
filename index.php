@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Sistema Web 2.0</title>
+    <title>Sistema de Login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -18,8 +18,7 @@
                 <nav class="navbar bg-light">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="#">
-                            <img src="img/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-                            Sistema Web 2.0
+                            Sistema de Login
                         </a>
                     </div>
                 </nav>
@@ -35,10 +34,10 @@
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">Cadastro</a>
+                                    <a class="nav-link active" aria-current="page" href="#">Cadastrar</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="consulta.php">Consulta</a>
+                                    <a class="nav-link" href="consulta.php">Consultar</a>
                                 </li>
                             </ul>
                         </div>
@@ -50,8 +49,8 @@
             <div class="col">
                 <!-- As a heading -->
                 <nav class="navbar bg-light">
-                    <div class="container_fluid">
-                        <span class="navbar-brand">Cadastro de Usuário</span>
+                    <div id = "dale" class="container_fluid">
+                        <span class="navbar-brand">Cadastrar</span>
                     </div>
                 </nav>
             </div>

@@ -1,11 +1,11 @@
 <?php
-require_once("../sistema_login/controller/ControllerCadastro.php");
+require_once("controller/ControllerCadastro.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Sistema Web 2.0</title>
+    <title>Sistema de Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
@@ -20,8 +20,7 @@ require_once("../sistema_login/controller/ControllerCadastro.php");
                 <nav class="navbar bg-light">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="#">
-                            <img src="img/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-                            Sistema Web 2.0
+                        Sistema de Login
                         </a>
                     </div>
                 </nav>
@@ -37,10 +36,10 @@ require_once("../sistema_login/controller/ControllerCadastro.php");
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.php">Cadastro</a>
+                                    <a class="nav-link" href="index.php">Cadastrar</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="consulta.php">Consulta</a>
+                                    <a class="nav-link active" aria-current="page" href="consulta.php">Consultar</a>
                                 </li>
                             </ul>
                         </div>
@@ -53,7 +52,7 @@ require_once("../sistema_login/controller/ControllerCadastro.php");
                 <!-- As a heading -->
                 <nav class="navbar bg-light">
                     <div class="container-fluid">
-                        <span class="navbar-brand">Lista de Usuários</span>
+                        <span class="navbar-brand">Usuários Cadastrados</span>
                     </div>
                 </nav>
             </div>
@@ -69,23 +68,35 @@ require_once("../sistema_login/controller/ControllerCadastro.php");
                             <th scope="col">Id</th>
                             <th scope="col">Email</th>
                             <th scope="col">Senha</th>
+                            <th scope="col">Endereço</th>
+                            <th scope="col">Bairro</th>
+                            <th scope="col">Cep</th>
+                            <th scope="col">Cidade</th>
+                            <th scope="col">Estado</th>
                             <th scope="col">Ações</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         $controller = new cadastroController();
-                        $result = $controller->listar();
-                        //print_r($resultado);
+                        $result = $controller->listar(0);
                         for ($i = 0; $i < count($result); $i++) {
                         ?>
                             <tr>
                                 <td scope="col"><?php echo $result[$i]['id']; ?></td>
                                 <td scope="col"><?php echo $result[$i]['email']; ?></td>
                                 <td scope="col"><?php echo $result[$i]['senha']; ?></td>
+                                <td scope="col"><?php echo $result[$i]['endereco']; ?></td>
+                                <td scope="col"><?php echo $result[$i]['bairro']; ?></td>
+                                <td scope="col"><?php echo $result[$i]['cep']; ?></td>
+                                <td scope="col"><?php echo $result[$i]['cidade']; ?></td>
+                                <td scope="col"><?php echo $result[$i]['estado']; ?></td>
                                 <td scope="col">
-                                    <button type="button" class="btn btn-dark">Editar</button>
-                                    <button type="button" class="btn btn-dark">Excluir</button>
+                                    <button type="button" class="btn btn-dark" onclick="location.href='EditarCliente.php?id=<?php echo $result[$i]['id']; ?>'" >Editar</button>
+                                    <button type="button" class="btn btn-dark" onclick="var result = confirm('Tem certeza que quer excluir o registro?');
+                                        if (result == true) {
+                                            location.href='excluir.php?id=<?php echo $result[$i]['id']; ?>'
+                                        }">Excluir</button>
                                 </td>
                             </tr>
                         <?php
