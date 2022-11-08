@@ -126,7 +126,7 @@ require_once("controller/ControllerCadastro.php");
                             </select>
                         </div>
                         <div class="col-12">
-                            <button type="submit" id="btnInserir" class="btn btn-dark">😝Editar</button>
+                            <button type="submit" id="btnInserir" class="btn btn-dark">Editar</button>
                         </div>
                          </form>
                     </p>

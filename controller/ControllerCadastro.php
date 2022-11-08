@@ -1,6 +1,6 @@
 <?php
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
-require_once("$root/sistema_login/model/cadastro.php");
+require_once("$root/SISTEMADELOGINPHP-4/model/cadastro.php");
 
 class cadastroController
 {
